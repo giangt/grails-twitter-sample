@@ -9,4 +9,13 @@ class StatusTagLib {
             out << g.render(template: '/status/statusMessages', model: [statusMessage: message, messageCounter: counter])
         }
     }
+	
+	def renderLikes = { attrs ->
+		def likedPeople
+		
+		if (attrs.message)
+			likedPeople = attrs.message.liked
+
+		out << g.render(template: '/status/statusLikes', model: [likes: likedPeople])
+	}
 }

@@ -28,4 +28,11 @@ class StatusController {
         statusService.follow id
         redirect action: 'index'
     }
+	
+	def like(long id) {
+		statusService.like id
+		
+		def content = twitter.renderLikes message: Status.get(id)
+		render content
+	}
 }

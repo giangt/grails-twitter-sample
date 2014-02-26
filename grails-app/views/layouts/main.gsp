@@ -14,6 +14,9 @@
                 <img src="${resource(dir:'images',file:'spinner.gif')}" alt="code:'spinner.alt',default:'Loading...')}" />
             </div>
             <div id="grailsLogo"><a href="http://grails.org"><img src="${resource(dir:'images',file:'grails_logo.png')}" alt="Grails" border="0" /></a></div>
+            <sec:ifNotLoggedIn>
+            	<strong>Welcome guest<br/><br/>
+            </sec:ifNotLoggedIn>
             <sec:ifLoggedIn>
                 <strong>Welcome <sec:username/></strong> (<g:link controller="logout">logout</g:link>)<br/><br/>
             </sec:ifLoggedIn>

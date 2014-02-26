@@ -37,6 +37,16 @@ class StatusService {
             timelineService.clearTimelineCacheForUser(currentUser.username)
         }
     }
+	
+	void like(long statusId) {
+		def status = Status.get(statusId)
+
+		if (status) {
+			def currentUser = lookupCurrentPerson()
+			status.addToLiked(currentUser)
+			timelineService.clearTimelineCacheForUser(currentUser.username)
+		}
+	}
 
     private lookupCurrentPerson() {
         Person.get(springSecurityService.principal.id)

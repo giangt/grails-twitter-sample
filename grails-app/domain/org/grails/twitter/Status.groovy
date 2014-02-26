@@ -6,6 +6,7 @@ class Status {
     String message
     Person author
     Date dateCreated
+	static hasMany = [liked:Person]
 
     transient jmsService
     transient afterInsert = {

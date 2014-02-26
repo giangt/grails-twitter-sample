@@ -3,6 +3,13 @@
     <meta name="layout" content="main"/>
     <title>What Are You Doing?</title>
     <g:javascript library="jquery" plugin="jquery" />
+    <g:javascript>
+    	/**
+    	function showLikeCount(message, count) {
+			$('.statusLike').val(count + " people like this.");
+		}
+		*/
+    </g:javascript>
 </head>
 <body>
     <h1>Search For People To Follow</h1>

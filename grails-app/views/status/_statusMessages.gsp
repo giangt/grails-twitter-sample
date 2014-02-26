@@ -5,7 +5,7 @@
     <div class="statusMessageLikeButton">
     	<g:remoteLink id="${statusMessage.id}" update="likes_${messageCounter}" action="like" controller="status">Like</g:remoteLink>
     	<div id="likes_${messageCounter}">
-			<twitter:renderLikes message="${statusMessages}"/>    		
+			<twitter:renderLikes message="${statusMessage}"/>    		
     	</div>
 	</div>
 </div>

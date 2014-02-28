@@ -7,6 +7,10 @@ grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 
+grails.war.resources = {stagingDir, args ->
+	delete(dir: "${stagingDir}/selenium")
+}
+
 grails.project.dependency.resolver = "maven" // or ivy
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
@@ -73,6 +77,7 @@ grails.project.dependency.resolution = {
         compile ':jms:1.2'
         compile ':searchable:0.6.6'
         compile ':spring-security-core:1.2.4'
+		compile ':selenium:0.8'
         test ':geb:0.9.2'
         test ':spock:0.7'
         test ':functional-test:1.2.7'

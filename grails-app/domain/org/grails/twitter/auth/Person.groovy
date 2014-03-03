@@ -1,5 +1,7 @@
 package org.grails.twitter.auth
 
+import org.grails.twitter.Message
+
 class Person {
 
     String realName
@@ -9,7 +11,7 @@ class Person {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-	static hasMany = [followed:Person]
+	static hasMany = [followed:Person, messages: Message]
 	static searchable = [only: 'realName']
 
 	static constraints = {
